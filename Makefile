@@ -398,7 +398,6 @@ OBJDUMP		= llvm-objdump
 READELF		= llvm-readelf
 STRIP		= llvm-strip
 else
-CC		= $(CROSS_COMPILE)gcc
 LD		= $(CROSS_COMPILE)ld
 LDGOLD		= $(CROSS_COMPILE)ld.gold
 AR		= $(CROSS_COMPILE)ar
@@ -785,7 +784,7 @@ ifdef CONFIG_CC_STACKPROTECTOR_REGULAR
   stackp-flag := -fstack-protector
   stackp-name := REGULAR
 else
-ifdef CONFIG_CC_STACKPROTECTOR_STRONG
+ifdef CONFIG_CC_STACKPROTECTOR_NONE
   stackp-flag := -fstack-protector-strong
   stackp-name := STRONG
 else
